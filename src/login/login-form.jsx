@@ -1,18 +1,23 @@
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form } from 'formik';
 import Logo from '../images/AopS_Online_Logos_AOPS Online Cube.png';
+import style from '../styles/login.module.scss';
 
 const LoginForm = () => {
     return (
-        <div>
-            <img src={Logo} alt="AoPS Online Logo" />
+        <div className={style.container}>
+            <img src={Logo} alt="AoPS Online Logo" className={style.logo} />
             <h1>Instructor Scheduling</h1>
             <Formik>
-                <Form>
+                <Form className={style.form}>
                     <label htmlFor='username' />
-                    <Field id='username' name='username' placeholder='username' />
+                    <Field
+                        id='username'
+                        name='username'
+                        placeholder='username'
+                        className={style.username} />
+                    <button>Enter Site</button>
                 </Form>
             </Formik>
-            <button>Enter Site</button>
         </div>
     );
 }
