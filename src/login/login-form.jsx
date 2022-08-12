@@ -5,19 +5,29 @@ import style from '../styles/login.module.scss';
 const LoginForm = () => {
     return (
         <div className={style.container}>
-            <img src={Logo} alt="AoPS Online Logo" className={style.logo} />
-            <h1>Instructor Scheduling</h1>
-            <Formik>
-                <Form className={style.form}>
-                    <label htmlFor='username' />
-                    <Field
-                        id='username'
-                        name='username'
-                        placeholder='username'
-                        className={style.username} />
-                    <button>Enter Site</button>
-                </Form>
-            </Formik>
+            <div className={style.row}>
+                <img src={Logo} alt="AoPS Online Logo" className={style.logo} />
+            </div>
+            <div className={style.row}>
+                <h1>Instructor Scheduling</h1>
+            </div>
+            <div className={style.row}>
+                <Formik>
+                    <Form className={style.form}>
+                        <div className={style.column}>
+                            <label htmlFor='username' />
+                            <Field
+                                id='username'
+                                name='username'
+                                placeholder='username'
+                                className={style.username} />
+                        </div>
+                        <div className={style.column}>
+                            <button>Enter Site</button>
+                        </div>
+                    </Form>
+                </Formik>
+            </div>
         </div>
     );
 }
